@@ -109,7 +109,7 @@ document.querySelector('#app').innerHTML = `
                 <div class="project-copy">
                   <h3>FINSTER ${asset('b8f08.svg','','title-ornament')}</h3>
                   <p>Finster is a dating application concept designed to create a safer and more trustworthy online dating experience. The platform introduces identity verification during onboarding to help reduce catfishing and increase confidence when users interact with potential matches.</p>
-                  <div class="project-links">${projectLink('Figma Link','finsterFigma')}${projectLink('Demo Video','finsterDemo')}</div>
+                  <div class="project-links">${projectLink('Figma Link','finsterPDF')}${projectLink('Demo Video','finsterDemo')}</div>
                 </div>
                 ${asset('dee3e.svg','','project-dots')}
                 <div class="finster-collage" aria-label="Finster app screens">
@@ -125,7 +125,7 @@ document.querySelector('#app').innerHTML = `
               </div></div>
             </article>
             <article class="project-slide pickerkarma" role="group" aria-roledescription="slide" aria-label="2 of 3: PickerKarma" inert aria-hidden="true">
-              <div class="scene-shell project-shell" data-scene-height="832"><div class="scene slide-scene">
+              <div class="scene-shell project-shell fluid-project"><div class="scene slide-scene">
                 <p class="project-number eyebrow">PROJECT 02</p>
                 ${asset('dee3e.svg','','project-dots')}
                 <div class="project-copy">
@@ -180,18 +180,19 @@ document.querySelector('#app').innerHTML = `
     </section>
 
     <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">CONTACTS</h2>
       <div class="contact-banner">
         <div class="banner-copy"><span class="banner-star" aria-hidden="true">✳</span><div><p>Technical thinking.<br>User-centered design.<br>Practical digital solutions.</p><span class="eyebrow">PAUL RICHARD CALMA / IT INFRASTRUCTURE</span></div></div>
         <div class="banner-photo">${asset('b19ee.png','','','loading="lazy"')}</div>
       </div>
       <div class="contact-grid">
-        <h2 id="contact-title">LET’S WORK<br>TOGETHER</h2>
+        <h3 class="contact-heading">LET’S WORK<br>TOGETHER</h3>
         <div class="contact-invitation"><p>Have a project in mind?<br>I’d love to help bring your<br class="desktop-break"> vision to life.</p><a class="connect-button" href="mailto:${contact.email}">LET’S CONNECT <span aria-hidden="true">⟶</span></a></div>
         <address class="contact-details">
           <a href="mailto:${contact.email}">${icon('email')}<span>${contact.email}</span></a>
           <span>${icon('phone')}<span>${contact.phone}</span></span>
           <span>${icon('location')}<span>${contact.location}</span></span>
-          <span>${icon('globe')}<span>${contact.website}</span></span>
+          <a href="${/^https?:\/\//i.test(contact.website) ? contact.website : `https://${contact.website}`}">${icon('globe')}<span>${contact.website}</span></a>
           ${contact.isPlaceholder ? '<small class="placeholder-note">Contact details are placeholders.</small>' : ''}
         </address>
       </div>
