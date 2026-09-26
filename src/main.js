@@ -187,7 +187,7 @@ document.querySelector('#app').innerHTML = `
       </div>
       <div class="contact-grid">
         <h3 class="contact-heading">LET’S WORK<br>TOGETHER</h3>
-        <div class="contact-invitation"><p>Have a project in mind?<br>I’d love to help bring your<br class="desktop-break"> vision to life.</p><a class="connect-button" href="mailto:${contact.email}">LET’S CONNECT <span aria-hidden="true">⟶</span></a></div>
+        <div class="contact-invitation"><p>Have a project in mind?<br>I’d love to help bring your<br class="desktop-break"> vision to life.</p><a class="connect-button" href="${contact.linkedIn}">LET’S CONNECT <span aria-hidden="true">⟶</span></a></div>
         <address class="contact-details">
           <a href="mailto:${contact.email}">${icon('email')}<span>${contact.email}</span></a>
           <span>${icon('phone')}<span>${contact.phone}</span></span>

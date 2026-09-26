@@ -4,6 +4,7 @@ export const contact = {
   phone: '+63 931 217 5925',
   location: 'Angeles City, Pampanga',
   website: 'https://sukaizaka-portfolio-v1.vercel.app/',
+  linkedIn: 'https://www.linkedin.com/in/paul-richard-calma-106516280/',
   isPlaceholder: false,
 };
 
