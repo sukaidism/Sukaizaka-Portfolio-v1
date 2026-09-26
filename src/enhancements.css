@@ -121,26 +121,29 @@ h2 { font-size: clamp(48px, 9svh, 92px); }
 .wordmark { font-size: clamp(24px, 2vw, 30px); }
 nav a {
   position: relative;
-  isolation: isolate;
-  border-radius: 50%;
+  border-radius: 0;
   background: transparent;
-  transition: color .25s, translate .25s;
+  transition: color .25s;
 }
 nav a::before {
   content: '';
   position: absolute;
-  inset: -4px -8px;
-  z-index: -1;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgb(154 140 152 / 28%), rgb(154 140 152 / 9%) 48%, transparent 73%);
-  opacity: 0;
-  scale: .8;
-  transition: opacity .3s, scale .3s;
+  inset: auto 14px 3px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .25s ease;
+  pointer-events: none;
 }
-nav a:hover, nav a[aria-current] { background: transparent; }
-nav a:hover { translate: 0 -2px; }
-nav a:hover::before, nav a:focus-visible::before, nav a[aria-current]::before { opacity: 1; scale: 1; }
-nav a[aria-current] { color: var(--ink); }
+nav a:hover, nav a:focus-visible, nav a[aria-current] {
+  background: transparent;
+  color: var(--ink);
+}
+nav a:hover::before, nav a:focus-visible::before, nav a[aria-current]::before {
+  transform: scaleX(1);
+}
 .hero { height: 100svh; padding-top: var(--header-height); background: var(--paper); }
 .hero-shell { height: var(--screen-height); padding-top: 0; }
 .hero-scene, .project-shell > .scene {
